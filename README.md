@@ -25,7 +25,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/reni2004/quiz-website.git
+   git clone https://github.com/Reni2004/quiz-website.git
 
 ## 📸 Screenshots
 
@@ -42,3 +42,8 @@
 ![Result Page](screenshort/screenshort18.png)
 
 _For more screenshots, check the `screenshort/` folder in this repository._
+
+## 🔗 Live Demo
+
+[Click here to try QuizMaster](https://Reni2004.github.io/Master-Quiz/company.html)
+
