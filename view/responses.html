@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Responses</title>
+  <link rel="stylesheet" href="../view/css/responses.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+   <!-- html2canvas for taking a screenshot -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<!-- jsPDF for generating the PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+  <div class="responses-container" id="responsesContainer">
+    <h1>Your Responses</h1>
+  </div>
+  <div style="text-align:center; margin-top: 20px;">
+    <button onclick="downloadPDF()" class="pdf-btn">📄 Download as PDF</button>
+  </div>
+  
+  <div style="text-align:center; margin-top: 30px;">
+    <button onclick="goHome()" class="home-btn"> Back to Home</button>
+  </div>
+  
+
+  <script src="js/responses.js"></script>
+</body>
+</html>
