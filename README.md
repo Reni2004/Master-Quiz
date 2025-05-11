@@ -26,3 +26,19 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/reni2004/quiz-website.git
+
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](screenshort/screenshort22.png)
+
+### Create Quiz
+![Create Quiz](screenshort/screenshort3.png)
+
+### Quiz Attempt Page
+![Quiz Attempt](screenshort/screenshort14.png)
+
+### Result Page
+![Result Page](screenshort/screenshort18.png)
+
+_For more screenshots, check the `screenshort/` folder in this repository._
