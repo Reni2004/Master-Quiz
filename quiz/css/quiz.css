@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: slateblue !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main {
+    background-color: white;
+    padding: 20px;
+}
+
+.main label {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#timer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+  #progress {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+button {
+    transition: all 0.3s ease;
+  }
+  
+button:hover {
+    background-color: #0056b3 !important;
+    color: #fff !important;
+    transform: scale(1.05);
+  }
+  .progress-container {
+    width: 100%;
+    background-color: #ddd;
+    height: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #28a745;
+    transition: width 0.3s ease;
+  }
+/* Fixed Progress Tracker at Top-Right */
+#progress-tracker {
+    position: fixed;
+    top: 100px; /* Adjust if needed, depends on timer height */
+    right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 350px;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.05); /* optional soft background */
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .progress-square {
+    position: relative;
+    display: inline-block;
+    margin: 4px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+    border: 2px solid #aaa;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Answered: Green */
+.progress-square.answered {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Not Answered: Red */
+.progress-square.not-answered {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Hover overrides both */
+.progress-square:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Tooltip styling */
+.tooltip-text {
+    visibility: hidden;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 4px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.progress-square:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+#camera-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 220px;
+  z-index: 1000;
+  border: 2px solid #00cc66;
+  border-radius: 12px;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+#camera, #faceCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+  
+      
