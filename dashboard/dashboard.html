@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- start css link -->
+    <link rel="stylesheet" href="../dashboard/css/dashboard.css">
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/css/animate.min.css">
+    <!-- end css link -->
+    <!-- start js link -->
+    <script src="../common/js/bootstrap.bundle.min.js"></script>
+    <script src="../common/js/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- end js link -->
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="toggler-box">
+        <i class="fa-solid fa-bars toggler-icon"></i>
+        <i class="fa-solid fa-xmarks d-none toggler-icon"></i>
+    </div>
+    <!-- <h1 class="text-info">Welcome To Dashboard!!</h1> -->
+    <div class="side-nav">
+        <div class="profile-pic"></div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="dashboard.html" >
+                <i class="fa fa-home"></i> Home</a>
+            </li>
+            <li class="list-group-item">
+                <a href="profile.html" >
+                <i class="fa fa-user"></i> Profile</a>
+            </li>
+            <li class="list-group-item">
+                <a href="student.html" >
+                <i class="fa fa-child"></i> Students</a>
+            </li>
+            <li class="list-group-item">
+                <a href="feedback.html" >
+                <i class="fa fa-list"></i> FeedBack</a>
+            </li>
+        </ul>
+        <button id="logout-btn">Logout</button>
+    </div>
+    <div class="container-fluid overflow-hidden p-2 main-box">
+        <div class="row">
+            <div class="col-md-0 col-lg-2 "></div>
+            <div class="col-md-12 col-lg-10 mt-1 p-0">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h1 id="brand-name">:brand-name</h1>
+                    </li>
+                </ul>
+                <div class="row mt-2">
+                    <div class="col-md-4 teacher-box text-center">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Teachers</h4>
+                            </li>
+                        </ul>
+                        <div class="content-box">
+                            <div class="number-box">
+                                <h5>200</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 teacher-box text-center">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Students</h4>
+                            </li>
+                        </ul>
+                        <div class="content-box">
+                            <div class="number-box">
+                                <h5>2000</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 teacher-box text-center">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Subjects</h4>
+                            </li>
+                        </ul>
+                        <div class="content-box">
+                            <div class="number-box">
+                                <h5>8</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item text-center">
+                                <h3>Create Subject</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <buttton class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#create-subject">>
+                                        Create Subject
+                                    </buttton>
+                                </h2>
+                                <div class="accordion-collapse collapse " id="create-subject">
+                                    <div class="accordion-body">
+                                        <form>
+                                            <input type="text" placeholder="Subject Name"
+                                                class="form-control subject mb-3">
+                                            <div align="end">
+                                                <button class="btn text-white subject-btn"
+                                                    style="background-color: #263159;">Store
+                                                    Subject</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="list-group">
+                            <li class="list-group-item text-center">
+                                <h3>Create Subject Related Questions</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <buttton class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#create-questions">
+                                        Create Questions
+                                    </buttton>
+                                </h2>
+                                <div class="accordion-collapse collapse " id="create-questions">
+                                    <div class="accordion-body">
+                                        <select name="" id="choose-subject" class="form-select mb-3">
+                                            <option value="choose subject">Choose Subject</option>
+                                        </select>
+                                        <div class="question-type-selector">
+                                            <label for="questionType">Select Question Type:</label>
+                                            <select id="questionType" onchange="showQuestionForm()">
+                                                <option value="">-- Select --</option>
+                                                <option value="manual">Create Manually</option>
+                                                <!-- <option value="ai">AI-Generated</option> -->
+                                                <option value="truefalse">True/False</option>
+                                                <option value="audiovideo">Audio/Video</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <!-- <div id="manualForm" class="question-form" style="display:none;"> -->
+                                        <!-- Your existing manual question form here -->
+                                        <form id="manualForm" class="question-form" style="display:none;">
+                                            <!-- <select name="" id="choose-subject" class="form-select mb-3">
+                                                    <option value="choose subject">Choose Subject</option>
+                                                </select> -->
+                                            <label for="question"> Write Your question Here !</label>
+                                            <input type="text" class="form-control subject mb-3" id="question" required>
+                                            <label for="option-one">Option-1</label>
+                                            <input type="text" class="form-control subject mb-3" id="option-one"
+                                                required>
+                                            <label for="option-two">Option-2</label>
+                                            <input type="text" class="form-control subject mb-3" id="option-two"
+                                                required>
+                                            <label for="option-three">Option-3</label>
+                                            <input type="text" class="form-control subject mb-3" id="option-three"
+                                                required>
+                                            <label for="option-four">Option-4</label>
+                                            <input type="text" class="form-control subject mb-3" id="option-four"
+                                                required>
+                                            <label for="correct-answer">Correct Answer</label>
+                                            <input type="text" class="form-control subject mb-3" id="correct-answer"
+                                                required>
+                                            <div align="end">
+                                                <button class="btn text-white" style="background-color: #263159;">Store
+                                                    Questions</button>
+                                            </div>
+                                        </form>
+                                        <!-- </div> -->
+                                        <!-- <form id="ai-question-form" class="question-form" style="display: none;"> -->
+                                        <!-- AI-Generated Question Box -->
+                                        <!-- AI-generated Question Form -->
+                                        <!-- <div id="ai-question-box" class="question-form" style="display: none;"> 
+                                            <h5>🤖 AI-Generated Questions</h5>
+                                        
+                                            <label for="aiTopic">Enter Topic</label>
+                                            <input type="text" id="aiTopic" class="form-control mb-2" placeholder="e.g. Newton's Laws" />
+                                        
+                                            <label for="aiCount">Number of Questions</label>
+                                            <input type="number" id="aiCount" class="form-control mb-3" value="5" min="1" max="10" />
+                                        
+                                            <button id="generateAIQuestions" class="btn btn-success mb-3">⚡ Generate Questions</button>
+                                        
+                                            <div id="generatedQuestionsPreview"></div>
+                                        
+                                            <button id="storeAIQuestions" class="btn btn-primary" style="display: none;">💾 Store Questions</button>
+                                        </div>                                         -->
+                                        
+                                        <!-- </form> -->
+                                        <!-- <div id="trueFalseForm" class="question-form" style="display: none;"> -->
+                                        <form id="trueFalseForm" class="question-form" style="display: none;">
+                                            <!-- <select name="" id="choose-subject" class="form-select mb-3">
+                                                    <option value="choose subject">Choose Subject</option>
+                                                </select> -->
+                                            <label for="question">Write Your Question Here!</label>
+                                            <input type="text" class="form-control subject mb-3" id="tf-question"
+                                                required>
+                                            <label for="option-one">Option-1</label>
+                                            <input type="text" class="form-control subject mb-3" id="tf-option-one"
+                                                value="True" readonly required>
+
+                                            <label for="option-two">Option-2</label>
+                                            <input type="text" class="form-control subject mb-3" id="tf-option-two"
+                                                value="False" readonly required>
+
+                                            <!-- Hidden dummy fields to keep insertQuesrtionFunc structure intact -->
+                                            <input type="hidden" class="form-control subject mb-3" id="tf-option-three"
+                                                value="">
+                                            <input type="hidden" class="form-control subject mb-3" id="tf-option-four"
+                                                value="">
+
+                                            <label for="correct-answer">Correct Answer</label>
+                                            <select id="tf-correct-answer" class="form-select mb-3" required>
+                                                <option value="">-- Select --</option>
+                                                <option value="option-1">option-1</option>
+                                                <option value="option-2">option-2</option>
+                                            </select>
+
+                                            <div align="end">
+                                                <button class="btn text-white" style="background-color: #263159;">Store
+                                                    Questions</button>
+                                            </div>
+                                        </form>
+                                        <!-- </div> -->
+
+                                        <form id="audioVideoForm" class="question-form" style="display: none;">
+                                            <label for="av-question">Write Your Question</label>
+                                            <input type="text" class="form-control mb-3" id="av-question" required>
+
+                                            <label for="av-file">Upload Audio or Video</label>
+                                            <input type="file" class="form-control mb-3" id="av-file"
+                                                accept="audio/*,video/*,image/*" required>
+
+                                            <label for="av-option-one">Option-1</label>
+                                            <input type="text" class="form-control mb-3" id="av-option-one" required>
+
+                                            <label for="av-option-two">Option-2</label>
+                                            <input type="text" class="form-control mb-3" id="av-option-two" required>
+
+                                            <label for="av-option-three">Option-3</label>
+                                            <input type="text" class="form-control mb-3" id="av-option-three">
+
+                                            <label for="av-option-four">Option-4</label>
+                                            <input type="text" class="form-control mb-3" id="av-option-four">
+
+                                            <label for="av-correct-answer">Correct Answer</label>
+                                            <input type="text" class="form-control mb-3" id="av-correct-answer"
+                                                required>
+
+                                            <div align="end">
+                                                <button class="btn text-white" style="background-color: #263159;">Store
+                                                    Questions</button>
+                                            </div>
+                                        </form>
+
+                                        <!-- <form class="question-form">
+                                            <select name="" id="choose-subject" class="form-select mb-3">
+                                                <option value="choose subject">Choose Subject</option>
+                                            </select>
+                                            <label for="question"> Write Your question Here !</label>
+                                            <input type="text" class="form-control subject mb-3" id="question" required>
+                                            <label for="option-one">Option-1</label>
+                                            <input type="text" class="form-control subject mb-3" id="option-one"
+                                                required>
+                                            <label for="option-two">Option-2</label>
+                                            <input type="text" class="form-control subject mb-3" id="option-two"
+                                                required>
+                                            <label for="option-three">Option-3</label>
+                                            <input type="text" class="form-control subject mb-3" id="option-three"
+                                                required>
+                                            <label for="option-four">Option-4</label>
+                                            <input type="text" class="form-control subject mb-3" id="option-four"
+                                                required>
+                                            <label for="correct-answer">Correct Answer</label>
+                                            <input type="text" class="form-control subject mb-3" id="correct-answer"
+                                                required>
+                                            <div align="end">
+                                                <button class="btn text-white" style="background-color: #263159;">Store
+                                                    Questions</button>
+                                            </div>
+                                        </form> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item text-center">
+                                <h3>Show Subject</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <buttton class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#show-subject">
+                                        Update & Delete All Subject
+                                    </buttton>
+                                </h2>
+                                <div class="accordion-collapse collapse " id="show-subject">
+                                    <div class="accordion-body">
+                                        <div class="visible-subject">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="list-group">
+                            <li class="list-group-item text-center">
+                                <h3>Update & Delete Subject Related Questions</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <buttton class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#show-questions">
+                                        Update & Delete Questions
+                                    </buttton>
+                                </h2>
+                                <div class="accordion-collapse collapse " id="show-questions">
+                                    <div class="accordion-body">
+                                        <select name="" id="select-subject" class="form-select mb-3">
+                                            <option value="choose subject">Choose Subject</option>
+                                        </select>
+                                        <div class="visible-question">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <ul class="list-group">
+                            <li class="list-group-item text-center">
+                                <h3>Student & Teachers Registration Form </h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <buttton class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#registration-form">>
+                                        Registrarion Form
+                                    </buttton>
+                                </h2>
+                                <div class="accordion-collapse collapse " id="registration-form">
+                                    <div class="accordion-body">
+                                        <form class="registration-form">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="name">Name</label>
+                                                    <input type="text" required id="name" class="form-control mb-3">
+                                                    <label for="father">Father's Name</label>
+                                                    <input type="text" required id="father" class="form-control mb-3">
+                                                    <label for="dob">DOB</label>
+                                                    <input type="date" required id="dob" class="form-control mb-3">
+                                                    <select name="" id="choose-type" class="form-select mb-3">
+                                                        <option value="choose type">Choose Type</option>
+                                                        <option value="teacher">Teacher</option>
+                                                        <option value="student">Student</option>
+                                                    </select>
+                                                    <div align="end">
+                                                        <button class="btn bg-info text-white">Register</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="mobile">Mobile</label>
+                                                    <input type="text" required id="mobile" class="form-control mb-3">
+                                                    <label for="enrollment">Enrollment</label>
+                                                    <input type="text" required id="enrollment"
+                                                        class="form-control mb-3">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" required id="password"
+                                                        class="form-control mb-3">
+                                                    <label for="address">Address</label>
+                                                    <textarea name="" required id="address"
+                                                        class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <ul class="list-group">
+                            <li class="list-group-item text-center">
+                                <h3>Student & Teachers Regarding Data </h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <buttton class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#registration-data">>
+                                        All Type of User Data
+                                    </buttton>
+                                </h2>
+                                <div class="accordion-collapse collapse " id="registration-data">
+                                    <div class="accordion-body" style="overflow-x: scroll;">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Profile</th>
+                                                    <th>Name</th>
+                                                    <th style="width: 150px;">Father's Name</th>
+                                                    <th>DOB</th>
+                                                    <th>User Type</th>
+                                                    <th>Mobile</th>
+                                                    <th>Enrollment</th>
+                                                    <th>Password</th>
+                                                    <th>Address</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="registration-data">
+                                                <tr>
+                                                    <th scope="row">${index + 1}</th>
+                                                    <td>
+                                                        <div class="profile">
+                                                            <img src="images/avtar.png" width="40" height="40" alt="">
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-nowrap" style="width: 8rem; ">${allData.name}</td>
+                                                    <td class="text-nowrap" style="width: 8rem; ">${allData.fatherName}
+                                                    </td>
+                                                    <td class="text-nowrap" style="width: 8rem; ">${allData.dob}</td>
+                                                    <td class="text-nowrap" style="width: 8rem; ">${allData.userType}
+                                                    </td>
+                                                    <td class="text-nowrap" style="width: 8rem; ">${allData.mobile}</td>
+                                                    <td class="text-nowrap" style="width: 8rem; ">${allData.enrollment}
+                                                    </td>
+                                                    <td class="text-nowrap" style="width: 8rem; ">${allData.password}
+                                                    </td>
+                                                    <td style="width: 8rem; ">${allData.address}</td>
+                                                    <td class="text-nowrap" style="width: 8rem; ">
+                                                        <i class='fa fa-trash del-btn mx-3'></i>
+                                                        <i class='fa fa-eye edit-btn' data-bs-toggle="modal"
+                                                            data-bs-target="#myModal"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item text-center">
+                                <h3>Search Result</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <buttton class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#get-result">>
+                                        Enter Enrollment No
+                                    </buttton>
+                                </h2>
+                                <div class="accordion-collapse collapse " id="get-result">
+                                    <div class="accordion-body">
+                                        <form class="certificate-form">
+                                            <input type="text" placeholder="Enter Enrollment Number"
+                                                class="form-control mb-3">
+                                            <div align="end">
+                                                <button class="btn text-white subject-btn"
+                                                    style="background-color: #263159;">
+                                                    Get Result
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="list-group">
+                            <li class="list-group-item text-center">
+                                <h3>Search Subject Related Result</h3>
+                            </li>
+                        </ul>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <buttton class="accordion-button" data-bs-toggle="collapse"
+                                        data-bs-target="#subject-result">
+                                        Search Subject Result
+                                    </buttton>
+                                </h2>
+                                <div class="accordion-collapse collapse " id="subject-result">
+                                    <div class="accordion-body">
+                                        <select name="" id="subject-result-el" class="form-select mb-3">
+                                            <option value="choose subject">Choose Subject</option>
+                                        </select>
+                                        <table class="table table-responsive table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Enrollment</th>
+                                                    <th>Subject</th>
+                                                    <th class="text-nowrap">Correct Answer</th>
+                                                    <th class="text-nowrap">Wrong Answer</th>
+                                                    <th>Out Of</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="subject-result-data">
+                                                <!-- <tr>
+                                                    <td class="text-nowrap" style="width: 8rem;">1</td>
+                                                    <td class="text-nowrap" style="width: 8rem;">Alok Kumar</td>
+                                                    <td class="text-nowrap" style="width: 8rem;">12345678</td>
+                                                    <td class="text-nowrap" style="width: 8rem;">Hindi</td>
+                                                    <td class="text-nowrap" style="width: 8rem;">4</td>
+                                                    <td class="text-nowrap" style="width: 8rem;">0</td>
+                                                    <td class="text-nowrap" style="width: 8rem;">4</td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start model coding-->
+    <div class="modal user-profile-box animate__animated animate__fadeInDown" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Just for code</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="profile-box mb-3">
+                                <div class="upload-box">
+                                    <button class="btn"><i class="fa fa-add"></i></button>
+                                    <input type="file" class="upload-input">
+                                </div>
+                                <br>
+                                <h3>Just for Code</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing edit</p>
+                            </div>
+                            <div class="date-box">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-caret-left mx-2"></i>
+                                    <h3>May</h3>
+                                    <i class="fa-solid fa-caret-right mx-2"></i>
+                                </div>
+                                <h1>27</h1>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <form class="modal-form">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Name</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Father's Name</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">DOB</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">user Type</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Mobile</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Enrollment</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Password</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Address</span>
+                                    <textarea name="" id="" class="form-control"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn modal-edit">Edit</button>
+                    <button class="btn fw-bold text-white modal-update-btn d-none btn-info ">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end modal coding -->
+    <!-- start certificate coding -->
+
+    <div class="certificate-main">
+        <button class="btn certificate-close-btn"><i class="fa fa-times-circle"></i></button>
+        <img src="images/certificate.png" width="100%" height="100%" alt="">
+        <div class="main-box">
+            <h1 class="text-center brand-name">JUST FOR CODE</h1>
+            <p class="text-center brand-address">GALA NO 402 NASHIK ROAD PUNE ANDHRA ROAD KALYAN DIST THANE.</p>
+
+            <div class="name-box">
+                <div class="img-box">
+                    <img src="images/avtar.png" class="cir-profile" width="100%" height="100%" alt="">
+                </div>
+                <div class="img-box">
+                    <p>Name : </p>
+                    <p>Enrollment: </p>
+                    <p>Father's Name: </p>
+                </div>
+                <div class="img-box">
+                    <p class="cir-name">Hetvi </p>
+                    <p class="cir-enrollment">01 </p>
+                    <p class="cir-father">Harilal </p>
+                </div>
+            </div>
+            <h2 class="mt-5">Result:-</h2>
+            <table class="table .table-striped">
+                <thead>
+                    <tr>
+                        <th>Sr</th>
+                        <th>Subject</th>
+                        <th>MaxMark</th>
+                        <th>Mark</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody class="cir-data">
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>Hindi</td>
+                        <td>50</td>
+                        <td>34</td>
+                        <td>34</td>
+                    </tr> -->
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Final Result</th>
+                        <th></th>
+                        <th class="cir-total">50</th>
+                        <th class="cir-total">30</th>
+                        <th class="cir-total">30</th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="signature-box">
+                <div class="sign-box" style="border-right: 2px solid black;">
+                </div>
+                <div class="sign-box final-result-box">
+                </div>
+                <div class="sign-box" style="border-left: 2px solid black;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end certificte coding-->
+
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

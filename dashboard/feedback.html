@@ -1,0 +1,130 @@
+<style>
+    /* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  padding: 40px 20px;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+table th {
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Clear Button */
+.clear-btn {
+  background-color: #e74c3c;
+  margin: 20px 0;
+}
+
+.clear-btn:hover {
+  background-color: #c0392b;
+}
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 25px 50px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+       .logo { font-size: 24px; font-weight: 600; color: #0077cc; }
+       .navbar ul { list-style: none; display: flex; gap: 25px; }
+       .navbar a { text-decoration: none; color: #444; font-weight: 500; transition: 0.3s; }
+       .navbar a:hover { color: #0077cc; }
+</style>
+<div class="navbar">
+    <div class="logo">Contact Messages</div>
+    <ul>
+      <li><a href="dashboard.html">Home</a></li>
+    </ul>
+</div>
+<table id="messagesTable" border="1" cellpadding="10">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Message</th>
+    <th>Time</th>
+  </tr>
+</table>
+
+<script>
+  const table = document.getElementById('messagesTable');
+  const messages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+
+  messages.forEach(msg => {
+    const row = table.insertRow();
+    row.innerHTML = `
+      <td>${msg.name}</td>
+      <td>${msg.email}</td>
+      <td>${msg.message}</td>
+      <td>${msg.time}</td>
+    `;
+  });
+</script>
