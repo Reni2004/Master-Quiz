@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #fff0f5; color: #333; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 25px 50px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    .logo { font-size: 24px; font-weight: 600; color: #ff69b4; }
+    .navbar ul { list-style: none; display: flex; gap: 25px; }
+    .navbar a { text-decoration: none; color: #444; font-weight: 500; transition: 0.3s; }
+    .navbar a:hover { color: #ff69b4; }
+    .signup-btn { background: #ff69b4; color: white !important; padding: 8px 16px; border-radius: 6px; }
+
+    .content { text-align: center; padding: 100px 30px; }
+    .content h1 { font-size: 40px; color: #ff1493; margin-bottom: 30px; }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 280px;
+      text-align: left;
+    }
+
+    .card h3 {
+      color: #ff69b4;
+    }
+
+    .card p {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Our Work</div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="company.html" class="signup-btn">Sign up</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Our Recent Projects</h1>
+    <div class="projects">
+      <div class="card">
+        <h3>Quiz Builder App</h3>
+        <p>A fully dynamic quiz application with AI-generated questions and result analytics.</p>
+      </div>
+      <div class="card">
+        <h3>Student Dashboard</h3>
+        <p>Interactive dashboard for students to manage learning progress, certificates, and quizzes.</p>
+      </div>
+      <div class="card">
+        <h3>Admin Panel</h3>
+        <p>Admin interface to manage users, content, and quiz scheduling with ease.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

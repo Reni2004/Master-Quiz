@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- start css link -->
+     <link rel="stylesheet" href="css/company.css">
+     <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../common/css/animate.min.css">
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+    <!-- end css link -->
+
+    <!-- start js link -->
+     <script src="../common/js/bootstrap.bundle.min.js"></script>
+     <script src="../common/js/sweetalert.min.js"></script>
+     <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+     <!-- end js link -->
+    <title>Company</title>
+</head>
+<body>
+    <div class="container bg-white main-box">
+        <nav class="navbar navbar-expand-lg navbar-light"> 
+             <!-- expand in long device --><!--navbar-light for light color-->
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">Brand Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <div class="navbar-nav w-100 justify-content-end">
+                        <a href="home.html" class="nav-link">Home</a>
+                        <a href="portfolio.html" class="nav-link">Protfolio</a>
+                        <a href="about.html" class="nav-link">About Us</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="#" class="nav-link btn signup-btn bg-info">Sign up</a>
+                        <a href="#" class="nav-link d-none btn login-btn bg-info">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="login-box active">
+                    <h1 class="mb-3">Welcome</h1>
+                    <form>
+                        <label for="brand-code">Brand Code</label>
+                        <input type="text" id="brand-code" class="form-control mb-3">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control mb-3">
+                        <div align="end">
+                           <a href="../homepage/homepage.html">Student Login Form</a>
+                        </div>
+                        <button class="btn btn-danger signin-btn mb-3 w-100">Sing In</button>
+                    </form>
+                </div>
+                <div class="signup-box ">  
+                    <form class="signup-form">
+                        <label for="s-brand-code">Brand Code</label>
+                        <input type="text" id="s-brand-code" class="form-control mb-3" required>
+                        <label for="brand-name">Brand Name</label>
+                        <input type="text" id="brand-name" class="form-control mb-3" required>
+                        <label for="website">Website</label>
+                        <input type="text" id="website" class="form-control mb-3" required>
+                        <label for="contact">Contact</label>
+                        <input type="text" id="contact" class="form-control mb-3" required>
+                        <label for="address">Address</label>
+                        <textarea name="" id="address" class="form-control mb-3" required></textarea>
+                        <label for="s-username">Username</label>
+                        <input type="text" id="s-username" class="form-control mb-3" required>
+                        <label for="s-password">Password</label>
+                        <input type="password" id="s-password" class="form-control mb-3" required>
+                        <div align="end">
+                           <a href="../homepage/homepage.html">Student Login Form</a>
+                        </div>
+                        <button class="btn btn-danger mt-3 mb-3 w-100">Sing In</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="https://i.pinimg.com/736x/18/11/f3/1811f344025539b7b4abb446eb6f910d.jpg" class="w-100" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="js/company.js"></script>
+</body>
+</html> 
