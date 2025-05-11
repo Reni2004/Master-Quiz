@@ -25,4 +25,4 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/quiz-website.git
+   git clone https://github.com/reni2004/quiz-website.git
